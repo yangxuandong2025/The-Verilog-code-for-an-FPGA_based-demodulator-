@@ -17,6 +17,7 @@ always @(posedge sys_clk or negedge rst_n) begin
            rectified_signal <= m_signal - 8'h80; // 等价于取绝对值
    end
 end
-
+////
+assign t = rectified_signal; // 输出整流后的信号
 
 endmodule //AM
