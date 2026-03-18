@@ -104,21 +104,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ad_data[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ad_data[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ad_data[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ad_data[0]
-set_global_assignment -name VERILOG_FILE ip/pll_inst.v
-set_global_assignment -name TCL_SCRIPT_FILE db/AM_demod_AC609.tcl
-set_global_assignment -name VERILOG_FILE ../rtl/FM.v
-set_global_assignment -name VERILOG_FILE ../rtl/CM.v
-set_global_assignment -name VERILOG_FILE ../rtl/AM.v
-set_global_assignment -name VERILOG_FILE ../rtl/uart_cmd_decoder_simple.v
-set_global_assignment -name VERILOG_FILE ../rtl/uart_byte_tx.v
-set_global_assignment -name VERILOG_FILE ../rtl/uart_byte_rx.v
-set_global_assignment -name VERILOG_FILE src/AM_demod_AC609.v
-set_global_assignment -name SDC_FILE AM_demod_AC609.sdc
-set_global_assignment -name QIP_FILE ip/pll.qip
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE ../img/stp3.stp
-set_global_assignment -name SIGNALTAP_FILE ../img/stp2.stp
-set_global_assignment -name SIGNALTAP_FILE ../img/stp3.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to Clk -section_id auto_signaltap_0
@@ -186,5 +173,22 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=0" -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name VERILOG_FILE ../rtl/Polyphase_FIR_Filter.v
+set_global_assignment -name VERILOG_FILE ../rtl/FIR.v
+set_global_assignment -name VERILOG_FILE ../rtl/CIC_Filter_down.v
+set_global_assignment -name VERILOG_FILE ../rtl/iir.v
+set_global_assignment -name TCL_SCRIPT_FILE db/AM_demod_AC609.tcl
+set_global_assignment -name VERILOG_FILE ../rtl/FM.v
+set_global_assignment -name VERILOG_FILE ../rtl/CM.v
+set_global_assignment -name VERILOG_FILE ../rtl/AM.v
+set_global_assignment -name VERILOG_FILE ../rtl/uart_cmd_decoder_simple.v
+set_global_assignment -name VERILOG_FILE ../rtl/uart_byte_tx.v
+set_global_assignment -name VERILOG_FILE ../rtl/uart_byte_rx.v
+set_global_assignment -name VERILOG_FILE src/AM_demod_AC609.v
+set_global_assignment -name SDC_FILE AM_demod_AC609.sdc
+set_global_assignment -name QIP_FILE ip/pll.qip
+set_global_assignment -name SIGNALTAP_FILE ../img/stp2.stp
+set_global_assignment -name SIGNALTAP_FILE ../img/stp3.stp
+set_global_assignment -name QIP_FILE ip/MULT.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp3_auto_stripped.stp

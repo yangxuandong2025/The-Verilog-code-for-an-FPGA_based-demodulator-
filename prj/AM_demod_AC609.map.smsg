@@ -1,1 +1,11 @@
-Warning (10268): Verilog HDL information at uart_byte_rx.v(148): always construct contains both blocking and non-blocking assignments File: E:/Quartus_licheng/AM_demod_AC609/rtl/uart_byte_rx.v Line: 148
+Warning (10268): Verilog HDL information at Polyphase_FIR_Filter.v(67): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/Polyphase_FIR_Filter.v Line: 67
+Warning (10268): Verilog HDL information at Polyphase_FIR_Filter.v(95): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/Polyphase_FIR_Filter.v Line: 95
+Warning (10268): Verilog HDL information at Polyphase_FIR_Filter.v(115): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/Polyphase_FIR_Filter.v Line: 115
+Warning (10268): Verilog HDL information at Polyphase_FIR_Filter.v(131): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/Polyphase_FIR_Filter.v Line: 131
+Warning (10268): Verilog HDL information at Polyphase_FIR_Filter.v(147): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/Polyphase_FIR_Filter.v Line: 147
+Warning (10268): Verilog HDL information at FIR.v(34): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/FIR.v Line: 34
+Warning (10268): Verilog HDL information at FIR.v(49): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/FIR.v Line: 49
+Warning (10268): Verilog HDL information at FIR.v(80): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/FIR.v Line: 80
+Warning (10268): Verilog HDL information at CIC_Filter_down.v(31): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/CIC_Filter_down.v Line: 31
+Warning (10268): Verilog HDL information at CIC_Filter_down.v(55): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/CIC_Filter_down.v Line: 55
+Warning (10268): Verilog HDL information at uart_byte_rx.v(148): always construct contains both blocking and non-blocking assignments File: E:/Quartus_File/AM_demod_AC609/rtl/uart_byte_rx.v Line: 148

@@ -40,27 +40,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "Rs232_Tx",
-					"strict" : false
-				},
-				{
-					"name" : "Tx_Done",
-					"strict" : false
-				},
-				{
-					"name" : "uart_state",
-					"strict" : false
-				},
-				{
 					"name" : "Clk",
 					"strict" : false
 				},
 				{
-					"name" : "AD[0]",
+					"name" : "Rst_n",
 					"strict" : false
 				},
 				{
-					"name" : "Rst_n",
+					"name" : "AD[0]",
 					"strict" : false
 				},
 				{
