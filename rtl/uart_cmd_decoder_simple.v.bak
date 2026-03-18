@@ -1,0 +1,56 @@
+module uart_cmd_decoder_simple (
+    input wire Clk,
+    input wire Rst_n,       // 低电平复位
+    
+    // --- 输入：来自 UART 接收模块 ---
+    input wire rx_valid,    // 数据有效标志
+    input wire [7:0] rx_data, // 接收到的 ASCII 码
+    
+    // --- 输出：命令匹配脉冲 (高电平持续 1 个周期) ---
+    output reg cmd_a,       // 对应 AM
+    output reg cmd_b,       // 对应 FM
+    output reg cmd_c,       // 对应 CM
+    output reg cmd_d,       // 对应 ASK
+    output reg cmd_e,       // 对应 PSK
+    output reg cmd_f,       // 对应 FSK
+    output reg cmd_g,       // 对应 IDLE/STOP
+    
+    output reg cmd_error    // 收到非 A-G 的字符
+);
+
+    // 定义常量 (可选，直接用十六进制更直观)
+    localparam CHAR_A = 8'h41;//AM
+    localparam CHAR_B = 8'h42;//FM
+    localparam CHAR_C = 8'h43;//CM
+    localparam CHAR_D = 8'h44;//ASK
+    localparam CHAR_E = 8'h45;//PSK
+    localparam CHAR_F = 8'h46;//FSK
+    localparam CHAR_G = 8'h47;//IDLE/STOP
+
+    always @(posedge Clk or negedge Rst_n) begin
+        if (!Rst_n) begin
+            // 复位时清零所有输出
+            {cmd_a, cmd_b, cmd_c, cmd_d, cmd_e, cmd_f, cmd_g, cmd_error} <= 8'b0;
+        end
+        else begin
+            // 默认清零所有输出脉冲 (保证只高电平 1 个周期)
+            {cmd_a, cmd_b, cmd_c, cmd_d, cmd_e, cmd_f, cmd_g, cmd_error} <= 8'b0;
+
+            // 只有在数据有效时才处理
+            if (rx_valid) begin
+                case (rx_data)
+                    CHAR_A: cmd_a <= 1'b1;//切换AM电路
+                    CHAR_B: cmd_b <= 1'b1;//切换FM电路
+                    CHAR_C: cmd_c <= 1'b1;//切换CM电路
+                    CHAR_D: cmd_d <= 1'b1;//切换ASK电路
+                    CHAR_E: cmd_e <= 1'b1;//切换PSK电路
+                    CHAR_F: cmd_f <= 1'b1;//切换FSK电路
+                    CHAR_G: cmd_g <= 1'b1;//切换IDLE/STOP电路
+                    
+                    default: cmd_error <= 1'b1; // 收到其他字符报错
+                endcase
+            end
+        end
+    end
+
+endmodule

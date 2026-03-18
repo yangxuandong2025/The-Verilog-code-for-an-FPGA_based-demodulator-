@@ -1,0 +1,10 @@
+
+State Machine - |AM_demod_AC609|current_mode
+Name current_mode.MODE_FSK current_mode.MODE_PSK current_mode.MODE_ASK current_mode.MODE_CM current_mode.MODE_FM current_mode.MODE_AM current_mode.MODE_STOP 
+current_mode.MODE_STOP 0 0 0 0 0 0 0 
+current_mode.MODE_AM 0 0 0 0 0 1 1 
+current_mode.MODE_FM 0 0 0 0 1 0 1 
+current_mode.MODE_CM 0 0 0 1 0 0 1 
+current_mode.MODE_ASK 0 0 1 0 0 0 1 
+current_mode.MODE_PSK 0 1 0 0 0 0 1 
+current_mode.MODE_FSK 1 0 0 0 0 0 1 

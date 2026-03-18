@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Mar 17 20:42:24 2026
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : AM_demod_AC609
+Top-level Entity Name : AM_demod_AC609
+Family : Cyclone IV E
+Total logic elements : 694
+    Total combinational functions : 526
+    Dedicated logic registers : 489
+Total registers : 489
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 3,072
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

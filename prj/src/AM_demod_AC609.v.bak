@@ -1,0 +1,24 @@
+module adc_capture(
+    input        Clk,
+    input        Rst_n,
+    input  [7:0] AD,
+    output       AD_CLK,
+    output reg [7:0] ad_data,
+    output reg       ad_valid
+);
+
+assign AD_CLK = Clk;
+// 采集AD数据并输出
+always @(posedge Clk or negedge Rst_n) begin
+    if(!Rst_n) begin
+        ad_data  <= 8'd0;
+        ad_valid <= 1'b0;
+    end
+    else begin
+        ad_data  <= AD;
+        ad_valid <= 1'b1;
+    end
+end
+
+
+endmodule
